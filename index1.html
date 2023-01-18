@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styel.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather&family=Ms+Madi&family=Permanent+Marker&family=Rowdies:wght@300&family=Space+Mono&family=Work+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <p>
+        <textarea id="top-text"></textarea>
+    </p>
+    <p>
+        <textarea id="bottom-text"></textarea>
+    </p>
+    <p>
+        <input type="file" id="image-input" accept="image/*">
+    </p>
+    <p>
+        <button id="generate-btn">Create Meme</button>
+    </p>
+    <p>
+        <canvas id="meme_canvas"></canvas>
+    </p>
+    <script src="main.js"></script>
+</body>
+</html>
