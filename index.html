@@ -5,42 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styel.css"> 
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather&family=Ms+Madi&family=Permanent+Marker&family=Rowdies:wght@300&family=Space+Mono&family=Work+Sans:wght@400;500;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1> MEME GENERATOR</h1>
-<div class="container">
-    <div class="row">
-        <textarea placeholder ="What the top of your meme will say" id ="topText" ></textarea>
-    </div>
-    <div class="row">
-        <textarea placeholder ="What the bottom of your meme will say"id="bottomText"></textarea>
-    </div>
-    <div class="row">
-        <input type="file" id="image_input" accept="image/*">
-    </div>
-    <div class="row">
-        <button id="create_btn">Create Meme</button>
-            <button id="delete_btn">Delete Meme</button>
-    </div>
-
-    <div class="row">
-        <canvas id="meme_canvas"></canvas>
-    </div>
-
-
-
-
-
-
-
-
-
-
-</div>
+    <form>
+        <div class="container">
+            <div>
+                <input id="topText" type="text" placeholder ="Top Text"> </input>
+            </div>
+             
+                    <div class="text">
+                        <input id="bottomText" type="text" placeholder ="Bottom Text"> </input>
+                    </div>
+                      </div>
+                    <input id="imageUrl" type="text" placeholder="URL for the Meme Img" required>
+                     </div>
+                     <div>
+                    <button type="submit" class="button button1" id="create_Btn">Create Meme</button>
+                    </div>
+  </form>
+    <div class= "memePlace" id="location"></div>
        
-    <script src="app.js"></script>
+    <script src="app1.js"></script>
     
 </body>
 </html>

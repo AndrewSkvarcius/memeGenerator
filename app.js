@@ -11,7 +11,7 @@ function initialize () {
     toptextEl = document.getElementById('topText');
     bottomtextEl = document.getElementById('bottomText');
     imageInput = document.getElementById('image_input');
-    createBtn = document.getElementById('create_btn');
+    createBtn = document.getElementById('create_Btn');
     deleteBtn = document.getElementById('delete_btn');
     canvas = document.getElementById('meme_canvas');
 
@@ -19,11 +19,21 @@ function initialize () {
 
     canvas.width = canvas.height = 0;
 
-    createBtn.addEventListener('click', function (e){
-        e.preventDefault();
+    const saveMeme = JSON.parse(localStorage.getItem("memes")) || [];
+  for  (let i = 0; i < saveMeme.length; i++)  {
+     newMeme = document.createElement('li');
+    newMeme.innerHTML = saveMeme[i].meme_canvas;
+    newMeme.isCompleted = saveMeme[i].isCompleted ? true : false;
+    if (newMeme.isCompleted) {
+    
+   container.appendChild(newMeme);
+  } };         
+
+    createBtn.addEventListener('click', function (evt){
+        evt.preventDefault();
         let reader = new FileReader();
         reader.onload = function () {
-            let meme = new Image;
+            let meme = document.createElement('img');
             meme.src = reader.result;
             createMeme (meme, toptextEl.value, bottomtextEl.value);
         };
@@ -63,6 +73,7 @@ ctx.textBaseline = "bottom";
 ctx.fillText(bottomText, canvas.width / 2, canvas.height, canvas.width);
 ctx.strokeText(bottomText, canvas.width /2, canvas.height, canvas.width);
 
-
+localStorage.setItem(canvas, JSON.stringify(image, topText, bottomText)
 };
 initialize(); 
+
